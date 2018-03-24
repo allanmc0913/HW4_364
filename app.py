@@ -410,7 +410,9 @@ def create_collection():
 def collections():
     # Replace with code
     # TODO 364: This view function should render the collections.html template so that only the current user's personal gif collection links will render in that template. Make sure to examine the template so that you send it the correct data!
-
+    #user_id = User.query.filter_by(username=current_user).first().id
+    #print (user_id)
+    print (current_user)
     collections = PersonalGifCollection.query.filter_by(User_id=current_user.id).all()
     return render_template('collections.html', collections=collections)
 
